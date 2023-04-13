@@ -9,14 +9,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(to top, #c7c7f5ae, #daf7dac1, #c7c7f5ae); */
+    background-color: #eee;
 }
 
 .wrapper {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     box-shadow: 0 3px 15px rgba(75,75,75, 0.7);
     padding: 10px;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 .header {
@@ -37,6 +40,7 @@ body {
 
 .action i{
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 .display {

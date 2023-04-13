@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/fluency/48/null/calculator.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
@@ -14,17 +15,17 @@
 
             <h1><img src="https://img.icons8.com/fluency/48/null/calculator.png"/>Calculator</h1>
             <div class="action">
-                <i class="fa-sharp fa-regular fa-window-minimize"></i>
-                <i class="fa-regular fa-window-maximize"></i>
-                <i class="fa-solid fa-xmark"></i>
+                <i id ="min" class="fa-sharp fa-regular fa-window-minimize"></i>
+                <i id="max" class="fa-regular fa-window-maximize"></i>
+                <i id="close" class="fa-solid fa-xmark"></i>
             </div>
         </div>
         <div class="display">
             <h5>array</h5>
-            <h1>0</h1></div>
+            <h1><span id="inputs">0</span></h1></div>
         <div class="btn">
             <div class="rows">
-                <button>%</button>
+                <button value=""">%</button>
                 <button>CE</button>
                 <button>C</button>
                 <button>del</button>
@@ -33,33 +34,34 @@
                 <button>1/x</button>
                 <button>x²</button>
                 <button>√x</button>
-                <button id="operator">÷</button>
+                <button id="operator" value="/">÷</button>
             </div>
             <div class="rows">
-                <button id="num">7</button>
-                <button id="num">8</button>
-                <button id="num">9</button>
-                <button id="operator">×</button>
+                <button id="num" value="7">7</button>
+                <button id="num" value="8">8</button>
+                <button id="num" value="9">9</button>
+                <button id="operator" value="*">×</button>
             </div>
             <div class="rows">
-                <button id="num">4</button>
-                <button id="num">5</button>
-                <button id="num">6</button>
-                <button id="operator">−</button>
+                <button id="num" value="4">4</button>
+                <button id="num" value="5">5</button>
+                <button id="num" value="6">6</button>
+                <button id="operator" value="-">−</button>
             </div>
             <div class="rows">
-                <button id="num">1</button>
-                <button id="num">2</button>
-                <button id="num">3</button>
-                <button id="operator">+</button>
+                <button id="num" value="1">1</button>
+                <button id="num" value="2">2</button>
+                <button id="num" value="3">3</button>
+                <button id="operator" value="+">+</button>
             </div>
             <div class="rows">
                 <button id="-ve">∓</button>
-                <button id="num">0</button>
-                <button id="num">.</button>
-                <button id="equal"><i class="fa-thin fa-equals fa-xl"></i></button>
+                <button id="num" value="0">0</button>
+                <button id="num" value=".">.</button>
+                <button id="equal">=</button>
             </div>
         </div>
     </div>
+    <script src="calculate.js"></script>
 </body>
 </html>
