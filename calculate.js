@@ -12,13 +12,18 @@ buttons.forEach((btn) => {
         // console.log(text.target.innerHTML);
         // console.log(nums)
         let ascii = text.target.value.charCodeAt();
-        if (text.target.innerHTML == 'C') {
+        if(text.target.innerHTML == '%')
+        {
+            inputs.innerHTML = `(${nums})%`;
+            nums = (nums/100);
+        }
+        else if (text.target.innerHTML == 'C') {
             nums = 0;
             inputs.innerHTML = nums;
         }
         else if (text.target.id == 'invert') {
             if (nums == '0') {
-                inputs.innerHTML = 'Cannot divide by zero';
+                inputs.innerHTML = 'Undefined';
             } else {
                 inputs.innerText = `1/(${nums})`;
                 nums = `1 / ${nums}`;
