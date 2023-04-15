@@ -10,10 +10,17 @@ let equal = document.querySelector('#equal');
 buttons.forEach((btn) => {
     btn.addEventListener('click', (text) => {
         let ascii = text.target.value.charCodeAt();
-        if(text.target.innerHTML == '%')
-        {
+        if (text.target.innerHTML == '%') {
             inputs.innerHTML = `(${nums})%`;
-            nums = (nums/100);
+            nums = (nums / 100);
+        }
+        else if (text.target.innerHTML == 'x!') {
+            inputs.innerHTML = `${nums}!`;
+            res = 1
+            for (let i = 2; i <= nums; i++) {
+                res *= i
+            }
+            nums = res;
         }
         else if (text.target.innerHTML == 'C') {
             nums = 0;
@@ -50,16 +57,16 @@ buttons.forEach((btn) => {
             nums = nums * (-1);
             inputs.innerText = nums;
         }
-        else {    
-            if (typeof(nums) == 'number' && ascii >= 48 && ascii <= 57) {
+        else {
+            if (typeof (nums) == 'number' && ascii >= 48 && ascii <= 57) {
                 nums = '0'
-            }    
+            }
             if (inputs.innerHTML == 0 || nums == 0) {
                 nums = text.target.innerHTML;
                 inputs.innerHTML = nums;
             } else {
-            nums += text.target.value;
-            inputs.innerText = nums;
+                nums += text.target.value;
+                inputs.innerText = nums;
             }
         }
     });
