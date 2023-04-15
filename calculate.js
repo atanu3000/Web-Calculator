@@ -9,8 +9,6 @@ let equal = document.querySelector('#equal');
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', (text) => {
-        // console.log(text.target.innerHTML);
-        // console.log(nums)
         let ascii = text.target.value.charCodeAt();
         if(text.target.innerHTML == '%')
         {
@@ -46,35 +44,41 @@ buttons.forEach((btn) => {
         }
         else if (text.target.innerHTML == '=') {
             nums = eval(nums);
-            inputs.innerHTML = nums;
-            nums = 0;
+            inputs.innerHTML = (nums);
         }
         else if (text.target.value == '-ve') {
             nums = nums * (-1);
             inputs.innerText = nums;
         }
-        else if (inputs.innerHTML == 0 || nums == 0) {
-            nums = text.target.innerHTML;
-            inputs.innerHTML = nums;
-        }
-        else {            
+        else {    
+            if (typeof(nums) == 'number' && ascii >= 48 && ascii <= 57) {
+                nums = '0'
+            }    
+            if (inputs.innerHTML == 0 || nums == 0) {
+                nums = text.target.innerHTML;
+                inputs.innerHTML = nums;
+            } else {
             nums += text.target.value;
             inputs.innerText = nums;
+            }
         }
     });
 });
 
+// To close the calculator on click
 close.addEventListener('click', () => {
     if (confirm("Do you want to exit?") == true) {
         calc.style.display = 'none';
     }
 });
 
+// To minimize the calculator on click
 min.addEventListener('click', () => {
     document.querySelector('.display').style.display = 'none';
     document.querySelector('.btn').style.display = 'none';
 })
 
+// To maximize the calculator on click
 max.addEventListener('click', () => {
     if (document.querySelector('.btn').style.display == 'none') {
         document.querySelector('.btn').style.display = 'block';
